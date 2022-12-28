@@ -19,7 +19,10 @@ export const TaskList = ({ tasks }: TaskListProps) => {
           <span className={style.taskCount}>{createdTasks}</span>
         </p>
         <p className={style.done}>
-          Concluídas <span className={style.taskCount}>{doneTasks}</span>
+          Concluídas{" "}
+          <span className={style.taskCount}>
+            {doneTasks} de {createdTasks}
+          </span>
         </p>
       </main>
       <main className={style.tasks}>
