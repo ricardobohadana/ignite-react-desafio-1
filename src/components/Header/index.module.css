@@ -1,0 +1,19 @@
+.header {
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 4.5rem;
+  padding-bottom: 5rem;
+  background-color: var(--gray-700);
+  gap: 0.75rem;
+}
+
+.title {
+  font-weight: 900;
+  font-size: 2.5rem;
+  color: var(--blue);
+}
+.do {
+  color: var(--purple-dark);
+}
