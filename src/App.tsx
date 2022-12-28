@@ -5,13 +5,19 @@ import { Header } from "./components/Header";
 import { TaskList } from "./components/TaskList";
 import { ITask } from "./models/ITask";
 import { v4 as randomUUID } from "uuid";
+import { useState } from "react";
 
 function App() {
-  const tasks: ITask[] = [
+  const [newTask, setNewTask] = useState<ITask>({
+    id: "",
+    content: "",
+    done: false
+  })
+  const [tasks, setTasks] = useState<ITask[]>([
     {
       id: randomUUID(),
       content: "This is a task",
-      done: false,
+      done: true,
     },
     {
       id: randomUUID(),
@@ -23,14 +29,13 @@ function App() {
       content: "This is a task",
       done: true,
     },
-  ];
-
+  ]);
   return (
     <div>
       <Header />
       <main className={style.mainContent}>
-        <Taskbar />
-        <TaskList tasks={tasks} />
+        <Taskbar newTask={newTask} setNewTask={setNewTask} setTasks={setTasks}/>
+        <TaskList tasks={tasks} setTasks={setTasks}/>
       </main>
     </div>
   );

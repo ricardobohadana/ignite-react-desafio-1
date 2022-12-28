@@ -1,6 +1,5 @@
 import { ITask } from "../../models/ITask";
 import style from "./index.module.css";
-import check from "../../assets/check.svg";
 
 interface TaskProps extends ITask {
   handleOnClickDelete: (id: string) => void;
@@ -10,20 +9,18 @@ interface TaskProps extends ITask {
 export const Task = ({
   id,
   content,
-  done,
   handleOnClickDelete,
   handleOnClickDoneCheckbox,
 }: TaskProps) => {
   return (
-    <main className={done ? style.mainDone : style.main}>
+    <main className={style.main}>
       <aside className={style.mainTaskContent}>
         <div
           onClick={(e) => handleOnClickDoneCheckbox(id)}
-          className={done ? style.checkboxChecked : style.checkbox}
+          className={style.checkbox}
         >
-          {done && <img className={style.check} src={check}></img>}
         </div>
-        <p className={done ? style.doneContent : style.normalContent}>
+        <p className={style.normalContent}>
           {content}
         </p>
       </aside>
