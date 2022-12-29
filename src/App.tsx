@@ -12,17 +12,17 @@ function App() {
   const [tasks, setTasks] = useState<ITask[]>([
     {
       id: randomUUID(),
-      content: "This is a task",
+      content: "Task number 1 (done)",
       done: true,
     },
     {
       id: randomUUID(),
-      content: "This is a task",
+      content: "Task number 2",
       done: false,
     },
     {
       id: randomUUID(),
-      content: "This is a task",
+      content: "Task number 3 (done)",
       done: true,
     },
   ]);
