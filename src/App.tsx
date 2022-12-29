@@ -8,11 +8,7 @@ import { v4 as randomUUID } from "uuid";
 import { useState } from "react";
 
 function App() {
-  const [newTask, setNewTask] = useState<ITask>({
-    id: "",
-    content: "",
-    done: false
-  })
+  const [newTask, setNewTask] = useState<string>("");
   const [tasks, setTasks] = useState<ITask[]>([
     {
       id: randomUUID(),

@@ -49,7 +49,7 @@ export const TaskList = ({tasks, setTasks}: TaskListProps) => {
       </main>
       <main className={style.tasks}>
         {createdTasks > 0 ? (
-          tasks.map((t) => (
+          tasks.sort((a, b) => Number(a.done) - Number(b.done)).map((t) => (
             t.done ? 
             <DoneTask 
               key={t.id}
